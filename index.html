@@ -30,8 +30,16 @@
         #btnExport { background-color: #217346; color: white; cursor: pointer; border: none; font-weight: bold; display: none; }
         #btnLogout { background-color: #dc3545; color: white; border: none; cursor: pointer; padding: 5px 15px; }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 10px; border: 1px solid #ddd; font-size: 13px; text-align: left; }
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto; /* Memunculkan scroll bar jika tabel terlalu lebar */
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        table { width: 100%; border-collapse: collapse;}
+        th, td { padding: 10px; border: 1px solid #ddd; font-size: 13px; text-align: left; white-space: nowrap;}
         th { background-color: #f8f9fa; }
         .status { margin-top: 10px; font-size: 13px; }
     </style>
@@ -77,12 +85,14 @@
 
         <div id="loadingStatus" class="status"></div>
 
-        <table id="reportTable">
-            <thead><tr id="tableHeader"></tr></thead>
-            <tbody id="tableBody">
-                <tr><td colspan="100%" style="text-align: center; color: #999; padding: 20px;">Pilih parameter untuk memulai</td></tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table id="reportTable">
+                <thead><tr id="tableHeader"></tr></thead>
+                <tbody id="tableBody">
+                    <tr><td colspan="100%" style="text-align: center; color: #999; padding: 20px;">Pilih parameter untuk memulai</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -217,3 +227,4 @@
 
 </body>
 </html>
+
