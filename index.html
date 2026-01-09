@@ -169,7 +169,7 @@
             const { data, error } = await supabaseClient
                 .schema('project1')
                 .from('summary_deposit') 
-                .select('merchant,tanggal_transaksi,keterangan,jumlah_transaksi,jumlah_transaksi_sesuai_rate,penambahan_rupiah,pengurangan_rupiah,rekonsiliasi_jumlah_transaksi,rekonsiliasi_rupiah,rekonsiliasi_tambah_kurang,saldo_rekonsiliasi_rupiah')
+                .select('merchant,tanggal_proses,keterangan,jumlah_transaksi,jumlah_transaksi_sesuai_rate,penambahan_rupiah,pengurangan_rupiah,rekonsiliasi_jumlah_transaksi,rekonsiliasi_rupiah,rekonsiliasi_tambah_kurang,saldo_rekonsiliasi_rupiah')
                 .gte('tanggal_transaksi', start)
                 .lte('tanggal_transaksi', end)
                 .order('urutan', { ascending: true });
@@ -227,4 +227,5 @@
 
 </body>
 </html>
+
 
